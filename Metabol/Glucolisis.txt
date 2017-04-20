@@ -1,0 +1,9 @@
+Es una serie de reacciones para extraer energía de la molécula de glucosa y convertirla en dos moléculas de tres carbonos llamados piruvato. Este proceso ocurre en el citosol de la célula y tiene dos fases, la que necesita energía y la que libera energía. 
+
+Fase que necesita energía: La molécula de glucosa se reordena y se le agregan dos grupos fosfato, causando inestabilidad en la nueva molécula, llamada fructosa-1,6-bifosfato. Esta desequilibrio permite que se divida en dos mitades formando dos azúcares fosfatados de tres carbonos, llamadas DHAP y gliceraldehído-3-fosfato. Como los fosfatos usados en estos pasos provienen de ATP, se utilizan dos moléculas de ATP. El gliceraldehído-3-fosfato continua en los siguientes pasos del proceso y la DHAP se convierte en gliceraldehído-3-fosfato. 
+
+Fase que libera energía- La molécula de gliceraldehído-3-fosfato se convierte en piruvato por medio de una serie de pasos produciendo una molécula de NADH y dos de ATP. Esta fase sucede dos veces por cada molécula de glucosa que se divide en tres carbonos y producen cuatro moléculas de ATP y dos de NADH en total.  
+
+Cada reacción de este proceso es catalizada por su propia enzima. La fosfofructocinasa es catalogada la enzima más importante para la regulación de la glucólisis, puesto que cataliza la formación de la inestable, fructosa-1,6-bifosfato. Esta acelera o frena la glucólisis dependiendo de la necesidad energética que la célula necesite. 
+
+En resumen, la glucólisis transforma una molécula de glucosa de seis carbonos a dos moléculas de piruvato de tres carbonos. Como producto se obtienen dos moléculas de ATP y dos moléculas de NADH.
