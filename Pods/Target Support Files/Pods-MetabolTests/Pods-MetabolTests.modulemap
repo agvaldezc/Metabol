@@ -1,0 +1,6 @@
+framework module Pods_MetabolTests {
+  umbrella header "Pods-MetabolTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

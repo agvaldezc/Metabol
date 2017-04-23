@@ -16,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let backgroundColor = UIColor.flatBlue()
+        
+        let complementaryColor = UIColor.init(contrastingBlackOrWhiteColorOn: backgroundColor, isFlat: true)
+        
+
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        UINavigationBar.appearance().barTintColor = backgroundColor
+        UINavigationBar.appearance().tintColor = complementaryColor
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : complementaryColor]
+
         return true
     }
 

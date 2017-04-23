@@ -7,11 +7,9 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class ContentViewController: UITableViewController {
-    
-    
-    @IBOutlet var topicCells: [UITableViewCell]!
     
     let titles = ["Biomoleculas", "Carbohidratos", "Glucosa", "Enzimas", "ATP", "Metabolismo", "Glucolisis", "Glucogenesis"]
 
@@ -23,7 +21,14 @@ class ContentViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.intializeTopicTitles()
+        //self.intializeTopicTitles()
+        
+//        let complementaryColor = UIColor.init(contrastingBlackOrWhiteColorOn: backgroundColor, isFlat: true)
+//        
+//        navigationController?.navigationBar.barTintColor = backgroundColor
+//        
+//        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: complementaryColor as! UIColor]
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,26 +47,31 @@ class ContentViewController: UITableViewController {
         performSegue(withIdentifier: "showInformation", sender: nil)
     }
     
-    func intializeTopicTitles() {
-        for i in 0...titles.count - 1 {
-            topicCells[i].textLabel?.text = titles[i]
-        }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return titles.count
     }
 
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath)
 
-        // Configure the cell...
+//        cell.tintColor = UIColor.flatWhite()
+        cell.textLabel?.text = titles[indexPath.row]
+//        cell.textLabel?.textColor = UIColor.flatWhite()
+//        cell.backgroundColor = backgroundColor
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "Selecciona alguna opción dentro de la lista para ver su contenido."
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Temas disponibles"
+    }
+ 
 
     /*
     // Override to support conditional editing of the table view.
