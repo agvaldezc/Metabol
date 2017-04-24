@@ -48,7 +48,7 @@
         <!--Title-->
         <scene sceneID="Pv2-s2-ihB">
             <objects>
-                <viewController id="3Cw-ex-wA3" customClass="InformationViewController" customModule="Metabol" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="3Cw-ex-wA3" customClass="InformationViewController" customModule="Metabol" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6JR-Km-b1F"/>
                         <viewControllerLayoutGuide type="bottom" id="PYT-rg-aUl"/>
@@ -68,7 +68,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="7KL-X2-25Q" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                <rect key="frame" x="16" y="72" width="343" height="209"/>
+                                <rect key="frame" x="16" y="72" width="343" height="171"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,7 +77,7 @@
                             <constraint firstItem="7KL-X2-25Q" firstAttribute="leading" secondItem="NlR-dM-eLc" secondAttribute="leadingMargin" id="8eR-Sz-k94"/>
                             <constraint firstItem="7KL-X2-25Q" firstAttribute="trailing" secondItem="NlR-dM-eLc" secondAttribute="trailingMargin" id="BF2-Jt-Xak"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NdC-Gf-PJi" secondAttribute="trailing" constant="3" id="FpU-dF-tHN"/>
-                            <constraint firstItem="NdC-Gf-PJi" firstAttribute="top" secondItem="7KL-X2-25Q" secondAttribute="bottom" constant="-30" id="WZN-Yr-2Eq"/>
+                            <constraint firstItem="NdC-Gf-PJi" firstAttribute="top" secondItem="7KL-X2-25Q" secondAttribute="bottom" constant="8" id="WZN-Yr-2Eq"/>
                             <constraint firstItem="PYT-rg-aUl" firstAttribute="top" secondItem="NdC-Gf-PJi" secondAttribute="bottom" constant="20" id="fwO-Aa-7o5"/>
                             <constraint firstItem="7KL-X2-25Q" firstAttribute="top" secondItem="6JR-Km-b1F" secondAttribute="bottom" constant="8" id="rTl-wE-5lh"/>
                         </constraints>
@@ -94,7 +94,7 @@
                         <outlet property="imageSlideshow" destination="7KL-X2-25Q" id="5oC-yW-eMS"/>
                         <outlet property="textView" destination="NdC-Gf-PJi" id="dkC-Rj-JxM"/>
                         <segue destination="c66-6Y-iji" kind="show" identifier="webView" id="HrQ-vc-tCf"/>
-                        <segue destination="lt1-PC-EXA" kind="show" identifier="quizView" id="ISs-ZA-vY1"/>
+                        <segue destination="az0-0f-9OB" kind="show" identifier="quizView" id="SHj-Nt-v49"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waP-sZ-FE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -102,35 +102,107 @@
             <point key="canvasLocation" x="748" y="115.59220389805098"/>
         </scene>
         <!--Quiz-->
-        <scene sceneID="XRt-ce-BAF">
+        <scene sceneID="AWC-p3-2CJ">
             <objects>
-                <tableViewController id="lt1-PC-EXA" customClass="QuizViewController" customModule="Metabol" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Pod-9s-m3l">
+                <viewController id="az0-0f-9OB" customClass="QuizViewController" customModule="Metabol" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sad-c2-lFu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qpz-tT-hoU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VyJ-Am-b5M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1am-fn-Jw6">
+                                <rect key="frame" x="16" y="101" width="343" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dg-TT-kZI">
+                                <rect key="frame" x="16" y="221" width="343" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.41320094965540866" green="0.70203957253624383" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="answer1:" destination="az0-0f-9OB" eventType="touchUpInside" id="9pd-lx-LWE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1a-oQ-EcG">
+                                <rect key="frame" x="16" y="278" width="343" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.41320094969999999" green="0.70203957250000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="answer2:" destination="az0-0f-9OB" eventType="touchUpInside" id="JOh-B0-PYE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jau-ZS-kHb">
+                                <rect key="frame" x="16" y="335" width="343" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.41320094969999999" green="0.70203957250000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="answer3:" destination="az0-0f-9OB" eventType="touchUpInside" id="8GQ-qI-SCz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJO-9d-ge5">
+                                <rect key="frame" x="16" y="392" width="343" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.41320094969999999" green="0.70203957250000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="answer4:" destination="az0-0f-9OB" eventType="touchUpInside" id="IWs-wX-yrc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXp-bQ-mdv">
+                                <rect key="frame" x="16" y="535" width="36" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Back_32"/>
+                                <connections>
+                                    <action selector="previousQuestion:" destination="az0-0f-9OB" eventType="touchUpInside" id="hhp-g5-Pxw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gU-IC-wvx">
+                                <rect key="frame" x="325" y="535" width="34" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Forward_32"/>
+                                <connections>
+                                    <action selector="nextQuestion:" destination="az0-0f-9OB" eventType="touchUpInside" id="o3O-aY-wo8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="r4o-U0-ONf">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r4o-U0-ONf" id="mLA-QO-bgS">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="lt1-PC-EXA" id="dL3-qZ-DVa"/>
-                            <outlet property="delegate" destination="lt1-PC-EXA" id="IaK-fg-0ui"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Quiz" id="XGs-78-JDt">
-                        <barButtonItem key="backBarButtonItem" title="Atras" id="G58-qm-qJ5"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Quiz" id="2DX-UT-lot">
+                        <barButtonItem key="backBarButtonItem" title="Atras" id="4fS-vt-3p0"/>
                     </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WTX-iv-qxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="nextQuestionButton" destination="4gU-IC-wvx" id="15y-al-iGB"/>
+                        <outlet property="previousQuestionButton" destination="bXp-bQ-mdv" id="uHI-g9-c3s"/>
+                        <outlet property="questionLabel" destination="1am-fn-Jw6" id="jql-qF-rbq"/>
+                        <outletCollection property="answerButtons" destination="7Dg-TT-kZI" collectionClass="NSMutableArray" id="8CO-Hx-nMn"/>
+                        <outletCollection property="answerButtons" destination="L1a-oQ-EcG" collectionClass="NSMutableArray" id="OHx-vD-99b"/>
+                        <outletCollection property="answerButtons" destination="Jau-ZS-kHb" collectionClass="NSMutableArray" id="nbk-Ek-CRi"/>
+                        <outletCollection property="answerButtons" destination="rJO-9d-ge5" collectionClass="NSMutableArray" id="fcf-mr-3Tr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U6m-9M-juO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1620" y="495"/>
+            <point key="canvasLocation" x="1620" y="460.11994002998506"/>
         </scene>
         <!--Consulta web-->
         <scene sceneID="K9N-O7-crc">
@@ -187,7 +259,6 @@
         <!--Menu Principal-->
         <scene sceneID="LYo-vw-bwu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VMv-hI-7aF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Lre-wJ-KGg" customClass="MenuViewController" customModule="Metabol" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LXf-oN-eU9"/>
@@ -319,6 +390,7 @@
                         <segue destination="aPX-ZD-FmK" kind="show" identifier="selectedCategory" id="ALc-8O-Mez"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VMv-hI-7aF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="uc9-DQ-0yw">
                     <connections>
                         <action selector="conocimientosTap:" destination="Lre-wJ-KGg" id="3wQ-uh-1B1"/>
@@ -343,4 +415,8 @@
             <point key="canvasLocation" x="-914.39999999999998" y="115.59220389805098"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Back_32" width="32" height="32"/>
+        <image name="Forward_32" width="32" height="32"/>
+    </resources>
 </document>

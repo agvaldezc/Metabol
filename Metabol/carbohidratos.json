@@ -1,0 +1,36 @@
+{
+	"questions": [
+		{
+			"question": "¿Cómo se dividen los carbohidratos?",
+			"answers": {
+				"1": "monosacáridos, disacáridos y polisacáridos",
+				"2": "polisacáridos",
+				"3": "Glucólisis y glucogenesis"
+			},
+
+			"correct_answer": "1"
+		},
+
+		{
+			"question": "Los carbohidratos se pueden encontrar de forma exclusiva en:",
+			"answers": {
+				"1": "Plantas",
+				"2": "Hongos",
+				"3": "Animales y hongos",
+				"4": "Fuego"
+			},
+
+			"correct_answer": "1"
+		},
+
+		{
+			"question": "¿En los animales hay mayor cantidad de carbohidratos que en las plantas porque los animales los adquieren al consumir vegetales?",
+			"answers": {
+				"1": "Falso",
+				"2": "Verdadero"
+			},
+
+			"correct_answer": "1"
+		}
+	]		
+}

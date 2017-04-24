@@ -13,6 +13,7 @@ class InformationViewController: UIViewController {
     
     var fileTitle : String?
     var images : [String] = []
+    var quiz : String?
 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageSlideshow: ImageSlideshow!
@@ -110,14 +111,20 @@ class InformationViewController: UIViewController {
         imageSlideshow.setImageInputs(imagesArray)
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "quizView" {
+            let newView = segue.destination as! QuizViewController
+            
+            newView.quiz = quiz
+        }
     }
-    */
+    
 
 }

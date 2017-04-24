@@ -1,0 +1,94 @@
+{
+	"questions": [
+
+		{
+			"question": "¿Cuál es la enzima más importante para la regulación de la glucólisis?",
+			"answers": {
+				"1": "fosfofructocinasa",
+				"2": "liasas",
+				"3": "apoenzima"
+			},
+
+			"correct_answer": "1"
+		},
+
+		{
+			"question": "¿En qué partes del cuerpo se produce normalmente la glucogenesis?",
+			"answers": {
+				"1": "Pancreas e intestino grueso",
+				"2": "Hígado y riñón",
+				"3": "Apéndice y páncreas"
+			},
+
+			"correct_answer": "2"
+		},
+
+		{
+			"question": "¿En qué reacción se obtienen dos moléculas de ATP y dos moléculas de NADH?",
+			"answers": {
+				"1": "Glucogenesis",
+				"2": "Redox",
+				"3": "Glucólisis"
+			},
+
+			"correct_answer": "3"
+		},
+
+		{
+			"question": "La glucólisis está dividida en dos fases",
+			"answers": {
+				"1": "Verdadero",
+				"2": "Falso"
+			},
+
+			"correct_answer": "1"
+		},
+
+		{
+			"question": "Las enzimas ___________ la velocidad de una reacción",
+			"answers": {
+				"1": "Disminuyen",
+				"2": "Aumentan",
+				"3": "No afectan"
+			},
+
+			"correct_answer": "2"
+		},
+
+		{
+			"question": "¿Qué molécula pequeña es considerada la moneda energética de las células vivas?",
+			"answers": {
+				"1": "ADP",
+				"2": "ATP",
+				"3": "Calorías",
+				"4": "Glucosa"
+			},
+
+			"correct_answer": "2"
+		},
+
+		{
+			"question": "6CO2 + 6H20 + luz solar + clororila → C6H12O6 + 6O2, Esta reaccion quimica corresponde a:",
+			"answers": {
+				"1": "Fotosintesis",
+				"2": "Respiración",
+				"3": "Respiración aerobia",
+				"4": "Respiración anaeoribia"
+			},
+
+			"correct_answer": "1"
+		},
+
+		{
+			"question": "C6H12O6 + 6O2 → 6CO2 + 6H20 + ATP, Esta reaccion quimica corresponde a:",
+			"answers": {
+				"1": "Fotosintesis",
+				"2": "Respiración",
+				"3": "Respiración aerobia",
+				"4": "Respiración anaeoribia"
+			},
+
+			"correct_answer": "4"
+		}		
+	]		
+}

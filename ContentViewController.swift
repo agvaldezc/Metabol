@@ -13,6 +13,7 @@ class ContentViewController: UITableViewController {
     
     var titles : [String] = []
     var images : [String] = []
+    var quiz : String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,6 +125,7 @@ class ContentViewController: UITableViewController {
             newView.fileTitle = cell?.textLabel?.text
             newView.images = images
             newView.navigationItem.title = cell?.textLabel?.text
+            newView.quiz = quiz
             
         }
     }

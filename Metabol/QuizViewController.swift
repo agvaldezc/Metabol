@@ -2,85 +2,206 @@
 //  QuizViewController.swift
 //  Metabol
 //
-//  Created by Alan Valdez on 4/20/17.
+//  Created by Alan Valdez on 4/23/17.
 //  Copyright © 2017 Alan Valdez. All rights reserved.
 //
 
 import UIKit
 
-class QuizViewController: UITableViewController {
+class QuizViewController: UIViewController {
+    
+    var quiz : String?
+    var currentQuestion : Int = 0
+    var currentCorrectAnswer : String = ""
+    var questions : [AnyObject] = []
+    
+    
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var nextQuestionButton: UIButton!
+    @IBOutlet weak var previousQuestionButton: UIButton!
+    
+    @IBOutlet var answerButtons: [UIButton]!
+    
+    @IBAction func answer1(_ sender: UIButton) {
+        checkQuestion(answerNumber: "1")
+    }
+    
+    @IBAction func answer2(_ sender: UIButton) {
+        checkQuestion(answerNumber: "2")
+    }
+    
+    @IBAction func answer3(_ sender: UIButton) {
+        checkQuestion(answerNumber: "3")
+    }
+    
+    @IBAction func answer4(_ sender: UIButton) {
+        checkQuestion(answerNumber: "4")
+    }
+    
+    func prepareButtons() {
+        for i in 0...answerButtons.count - 1 {
+            answerButtons[i].backgroundColor = UIColor.flatNavyBlue()
+        }
+    }
+    
+    func turnOffButtons() {
+        for i in 0...answerButtons.count - 1 {
+            answerButtons[i].isHidden = true
+        }
+    }
+    
+    func loadQuestionJson(quiz: String) {
+        do {
+            if let file = Bundle.main.url(forResource: quiz, withExtension: "json") {
+                let data = try Data(contentsOf: file)
+                
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                
+                if let object = json as? [String: AnyObject] {
+                    // json is a dictionary
+                    //print(object)
+                    questions = object["questions"] as! [AnyObject]
+                } else {
+                    let alert = UIAlertController(title: "Error", message: "No se ha podido cargar la información del tema.", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
+                        self.navigationController?.popViewController(animated: true)
+                    }))
+                    
+                    present(alert, animated: true, completion: nil)
+                }
+            } else {
+                let alert = UIAlertController(title: "Error", message: "No se ha podido cargar la información del tema.", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
+                    self.navigationController?.popViewController(animated: true)
+                }))
+                
+                present(alert, animated: true, completion: nil)
+            }
+        } catch {
+            let alert = UIAlertController(title: "Error", message: "No se ha podido cargar la información del tema.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
+                self.navigationController?.popViewController(animated: true)
+            }))
+            
+            present(alert, animated: true, completion: nil)
+        }
+        
+        if questions.count == 0 {
+            let alert = UIAlertController(title: "Error", message: "No se ha podido cargar la información del tema.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
+                self.navigationController?.popViewController(animated: true)
+            }))
+            
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func loadQuestion() {
+        
+        if currentQuestion < questions.count {
+            let questionObject = questions[currentQuestion] as! [String:AnyObject]
+            
+            //print(questionObject)
+            
+            let question = questionObject["question"] as! String
+            let answers = questionObject["answers"] as! [String:AnyObject]
+            
+            //print(answers)
+            
+            currentCorrectAnswer = questionObject["correct_answer"] as! String
+            
+            for i in 0...answers.count - 1 {
+                
+                let answer = answers[String(i + 1)] as! String
+                
+                //print(answer)
+                
+                answerButtons[i].setTitle(answer, for: .normal)
+                answerButtons[i].isHidden = false
+            }
+            
+            questionLabel.text = question
+        }
+        
+    }
+    
+    func checkQuestion(answerNumber: String) {
+        if answerNumber == currentCorrectAnswer {
+            let alert = UIAlertController(title: "Correcto", message: "Felicidades, seleccionaste la respuesta correcta!", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            present(alert, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Incorrecto", message: "Esta no es la respuesta correcta. Vuelve a intentarlo.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func nextQuestion(_ sender: UIButton) {
+        
+        currentQuestion += 1
+        
+        if currentQuestion < questions.count - 1 {
+            turnOffButtons()
+            loadQuestion()
+            
+        } else if currentQuestion == questions.count - 1 {
+            turnOffButtons()
+            loadQuestion()
+            nextQuestionButton.isHidden = true
+    
+            currentQuestion = questions.count - 1
+        }
+        
+        previousQuestionButton.isHidden = false
+
+    }
+    
+    
+    @IBAction func previousQuestion(_ sender: UIButton) {
+        
+        currentQuestion -= 1
+        
+        if currentQuestion == 0 {
+            turnOffButtons()
+            loadQuestion()
+            
+            previousQuestionButton.isHidden = true
+            
+            currentQuestion = 0
+            
+        } else if currentQuestion < questions.count{
+            turnOffButtons()
+            loadQuestion()
+        }
+        
+        nextQuestionButton.isHidden = false
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // Do any additional setup after loading the view.
+        prepareButtons()
+        turnOffButtons()
+        loadQuestionJson(quiz: quiz!)
+        loadQuestion()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
+    
 
     /*
     // MARK: - Navigation
