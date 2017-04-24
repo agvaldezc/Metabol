@@ -14,6 +14,7 @@ class InformationViewController: UIViewController {
     var fileTitle : String?
     var images : [String] = []
     var quiz : String?
+    var link : String?
 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageSlideshow: ImageSlideshow!
@@ -123,6 +124,12 @@ class InformationViewController: UIViewController {
             let newView = segue.destination as! QuizViewController
             
             newView.quiz = quiz
+        }
+        
+        if segue.identifier == "webView" {
+            let newView = segue.destination as! WebViewController
+            
+            newView.urlString = link
         }
     }
     

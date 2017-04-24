@@ -16,9 +16,14 @@ class MenuViewController: UIViewController {
     
     let quiz = ["general", "carbohidratos", "metabolismo", "reacciones"]
     
+    let links = [["http://app.knovel.com/hotlink/toc/id:kpDCE00021/dictionary-chemical-engineering/dictionary-chemical-engineering"],
+                 ["http://gan-bcn.com/gfx/el_metabolismo_de_los_hidratos_de_carbono.pdf", "https://en.wikipedia.org/wiki/Glucose"],
+                 ["https://app.smartsheet.com/b/home", "http://www.botanical-online.com/carbohidratos_metabolismo.htm","http://dx.doi.org/10.1590/S1517-83822011000100019"], ["http://www.ncbi.nlm.nih.gov/books/NBK22395/", "http://www.ncbi.nlm.nih.gov/books/NBK22395/"]]
+    
     var titlesToSend : [String] = []
     var imagesToSend : [String] = []
     var quizToSend : String = ""
+    var linksToSend : [String] = []
     
     @IBOutlet weak var generales: UIView!
     @IBOutlet weak var carbohidratos: UIView!
@@ -35,6 +40,7 @@ class MenuViewController: UIViewController {
         titlesToSend = topics[0]
         imagesToSend = images[0]
         quizToSend = quiz[0]
+        linksToSend = links[0]
         
         performSegue(withIdentifier: "selectedCategory", sender: nil)
     }
@@ -43,6 +49,7 @@ class MenuViewController: UIViewController {
         titlesToSend = topics[1]
         imagesToSend = images[1]
         quizToSend = quiz[1]
+        linksToSend = links[1]
 
         performSegue(withIdentifier: "selectedCategory", sender: nil)
     }
@@ -51,6 +58,7 @@ class MenuViewController: UIViewController {
         titlesToSend = topics[2]
         imagesToSend = images[2]
         quizToSend = quiz[2]
+        linksToSend = links[2]
         
         performSegue(withIdentifier: "selectedCategory", sender: nil)
     }
@@ -59,6 +67,7 @@ class MenuViewController: UIViewController {
         titlesToSend = topics[3]
         imagesToSend = images[3]
         quizToSend = quiz[3]
+        linksToSend = links[3]
 
         performSegue(withIdentifier: "selectedCategory", sender: nil)
     }
@@ -103,5 +112,6 @@ class MenuViewController: UIViewController {
         newView.titles = titlesToSend
         newView.images = imagesToSend
         newView.quiz = quizToSend
+        newView.links = linksToSend
     }
 }

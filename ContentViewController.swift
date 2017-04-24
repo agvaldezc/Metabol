@@ -14,6 +14,7 @@ class ContentViewController: UITableViewController {
     var titles : [String] = []
     var images : [String] = []
     var quiz : String?
+    var links : [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,7 +127,7 @@ class ContentViewController: UITableViewController {
             newView.images = images
             newView.navigationItem.title = cell?.textLabel?.text
             newView.quiz = quiz
-            
+            newView.link = links[(indexPath?.row)!]
         }
     }
  
