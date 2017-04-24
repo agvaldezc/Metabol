@@ -90,7 +90,7 @@ class QuizViewController: UIViewController {
         }
         
         if questions.count == 0 {
-            let alert = UIAlertController(title: "Error", message: "No se ha podido cargar la información del tema.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Lo sentimos", message: "En este momento no se cuenta con este tipo de contenido para la categoría. Espera nuevo contenido en la siguiente actualización.", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
                 self.navigationController?.popViewController(animated: true)
@@ -153,12 +153,12 @@ class QuizViewController: UIViewController {
             turnOffButtons()
             loadQuestion()
             
-        } else if currentQuestion == questions.count - 1 {
+        } else if currentQuestion >= questions.count - 1 {
+            currentQuestion = questions.count - 1
+            
             turnOffButtons()
             loadQuestion()
             nextQuestionButton.isHidden = true
-    
-            currentQuestion = questions.count - 1
         }
         
         previousQuestionButton.isHidden = false
@@ -170,13 +170,13 @@ class QuizViewController: UIViewController {
         
         currentQuestion -= 1
         
-        if currentQuestion == 0 {
+        if currentQuestion <= 0 {
+            currentQuestion = 0
+            
             turnOffButtons()
             loadQuestion()
             
             previousQuestionButton.isHidden = true
-            
-            currentQuestion = 0
             
         } else if currentQuestion < questions.count{
             turnOffButtons()

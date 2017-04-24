@@ -34,7 +34,7 @@ open class FullScreenSlideshowViewController: UIViewController {
     open var inputs: [InputSource]?
 
     /// Background color
-    open var backgroundColor = UIColor.black
+    open var backgroundColor = UIColor.gray
 
     /// Enables/disable zoom
     open var zoomEnabled = true {

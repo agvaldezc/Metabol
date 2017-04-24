@@ -290,6 +290,7 @@
 				TargetAttributes = {
 					E9CA17051EA92C6000D3856C = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = S6VNANL5GZ;
 						ProvisioningStyle = Automatic;
 					};
 					E9CA17191EA92C6000D3856C = {
@@ -666,7 +667,9 @@
 			baseConfigurationReference = 2F08CFB422D00EB9212257B6 /* Pods-Metabol.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S6VNANL5GZ;
 				INFOPLIST_FILE = Metabol/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = agvaldezc.Metabol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -679,7 +682,9 @@
 			baseConfigurationReference = EF6EC6CB9DD84D33F5DABCCE /* Pods-Metabol.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S6VNANL5GZ;
 				INFOPLIST_FILE = Metabol/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = agvaldezc.Metabol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
