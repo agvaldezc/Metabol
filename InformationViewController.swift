@@ -12,6 +12,7 @@ import ImageSlideshow
 class InformationViewController: UIViewController {
     
     var fileTitle : String?
+    var images : [String] = []
 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageSlideshow: ImageSlideshow!
@@ -22,16 +23,16 @@ class InformationViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         loadFileInformation()
-        imageSlideshow.setImageInputs([
-            ImageSource(image: UIImage(named: "aldosa_cetosa")!),
-            ImageSource(image: UIImage(named: "aldosa_cetosa")!),
-            ImageSource(image: UIImage(named: "aldosa_cetosa")!),
-            ImageSource(image: UIImage(named: "aldosa_cetosa")!)
-        ])
         
-        imageSlideshow.pageControlPosition = PageControlPosition.underScrollView
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showFullscreenImage))
+        
+        imageSlideshow.addGestureRecognizer(tapGesture)
+        
         imageSlideshow.pageControl.pageIndicatorTintColor = UIColor.init(contrastingBlackOrWhiteColorOn: tintColor, isFlat: true, alpha: 0.65)
+        
         imageSlideshow.pageControl.currentPageIndicatorTintColor = tintColor
+        
+        loadImages()
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,6 +92,22 @@ class InformationViewController: UIViewController {
     
     func showQuizView() {
         performSegue(withIdentifier: "quizView", sender: nil)
+    }
+    
+    func showFullscreenImage() {
+        imageSlideshow.presentFullScreenController(from: self)
+    }
+    
+    func loadImages() {
+        var imagesArray : [ImageSource] = []
+        
+        for i in 0...images.count - 1 {
+            let image = ImageSource(image: UIImage(named: images[i])!)
+            
+            imagesArray.append(image)
+        }
+        
+        imageSlideshow.setImageInputs(imagesArray)
     }
     
     /*

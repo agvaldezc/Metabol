@@ -12,9 +12,10 @@ class MenuViewController: UIViewController {
     
     let topics = [["Biomoleculas"], ["Carbohidratos", "Glucosa"], ["Enzimas", "ATP", "Metabolismo"], ["Glucolisis", "Glucogenesis"]]
     
-    let images : [String] = []
+    let images = [["biomoleculas-1", "biomoleculas-2", "biomoleculas-3", "biomoleculas-4", "biomoleculas-5"], ["carbohidratos-1", "carbohidratos-2", "carbohidratos-3"], ["metabolismo-1", "metabolismo-2", "metabolismo-3", "metabolismo-4", "metabolismo-5", "metabolismo-6", "metabolismo-7", "metabolismo-8", "metabolismo-9", "metabolismo-10"], ["reacciones-1", "reacciones-2", "reacciones-3", "reacciones-4"]]
     
     var titlesToSend : [String] = []
+    var imagesToSend : [String] = []
     
     @IBOutlet weak var generales: UIView!
     @IBOutlet weak var carbohidratos: UIView!
@@ -29,21 +30,29 @@ class MenuViewController: UIViewController {
 
     @IBAction func conocimientosTap(_ sender: Any) {
         titlesToSend = topics[0]
+        imagesToSend = images[0]
+        
         performSegue(withIdentifier: "selectedCategory", sender: nil)
     }
     
     @IBAction func carbohidratosTap(_ sender: Any) {
         titlesToSend = topics[1]
+        imagesToSend = images[1]
+
         performSegue(withIdentifier: "selectedCategory", sender: nil)
     }
     
     @IBAction func metabolismoTap(_ sender: Any) {
         titlesToSend = topics[2]
+        imagesToSend = images[2]
+        
         performSegue(withIdentifier: "selectedCategory", sender: nil)
     }
     
     @IBAction func reaccionesTap(_ sender: Any) {
         titlesToSend = topics[3]
+        imagesToSend = images[3]
+
         performSegue(withIdentifier: "selectedCategory", sender: nil)
     }
     override func viewDidLoad() {
@@ -85,5 +94,6 @@ class MenuViewController: UIViewController {
         let newView = segue.destination as! ContentViewController
         
         newView.titles = titlesToSend
+        newView.images = imagesToSend
     }
 }
