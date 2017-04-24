@@ -1,14 +1,29 @@
 PODS:
+  - Auk (7.0.1):
+    - moa
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
+  - ImageSlideshow (1.2.0):
+    - ImageSlideshow/Core (= 1.2.0)
+  - ImageSlideshow/Core (1.2.0)
+  - moa (8.0.4)
+  - SKPhotoBrowser (4.0.1)
 
 DEPENDENCIES:
+  - Auk (~> 7.0)
   - ChameleonFramework
+  - ImageSlideshow (~> 1.2)
+  - moa (~> 8.0)
+  - SKPhotoBrowser
 
 SPEC CHECKSUMS:
+  Auk: 6f8c4e93427d0d02641263776dd3b66ae4050903
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  ImageSlideshow: c1395dcf33f7dba407fd21df0e8c315e8941e209
+  moa: 954e2ad962886626d02c3486dd3a7bb5f0052d14
+  SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
 
-PODFILE CHECKSUM: 64d46da3dfcad73ba735a5716a99f3ea27058569
+PODFILE CHECKSUM: 54917143664cbc79f4c779d23bf50d94f6867ff5
 
 COCOAPODS: 1.2.1

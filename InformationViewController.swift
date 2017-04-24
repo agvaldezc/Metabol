@@ -7,19 +7,31 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class InformationViewController: UIViewController {
     
     var fileTitle : String?
 
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageSlideshow: ImageSlideshow!
+    var tintColor = UIColor.flatNavyBlue()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         loadFileInformation()
+        imageSlideshow.setImageInputs([
+            ImageSource(image: UIImage(named: "aldosa_cetosa")!),
+            ImageSource(image: UIImage(named: "aldosa_cetosa")!),
+            ImageSource(image: UIImage(named: "aldosa_cetosa")!),
+            ImageSource(image: UIImage(named: "aldosa_cetosa")!)
+        ])
+        
+        imageSlideshow.pageControlPosition = PageControlPosition.underScrollView
+        imageSlideshow.pageControl.pageIndicatorTintColor = UIColor.init(contrastingBlackOrWhiteColorOn: tintColor, isFlat: true, alpha: 0.65)
+        imageSlideshow.pageControl.currentPageIndicatorTintColor = tintColor
     }
 
     override func didReceiveMemoryWarning() {

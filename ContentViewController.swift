@@ -11,7 +11,7 @@ import ChameleonFramework
 
 class ContentViewController: UITableViewController {
     
-    let titles = ["Biomoleculas", "Carbohidratos", "Glucosa", "Enzimas", "ATP", "Metabolismo", "Glucolisis", "Glucogenesis"]
+    var titles : [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

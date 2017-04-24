@@ -58,29 +58,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdC-Gf-PJi">
-                                <rect key="frame" x="19" y="328" width="337" height="277"/>
+                                <rect key="frame" x="19" y="251" width="337" height="396"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="396" id="h1u-mr-0Ul"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tzQ-01-DrO">
-                                <rect key="frame" x="87" y="107" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="N87-yS-c7h"/>
-                                    <constraint firstAttribute="width" constant="200" id="s0m-BL-ZVq"/>
-                                </constraints>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7KL-X2-25Q" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                <rect key="frame" x="16" y="72" width="343" height="171"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NdC-Gf-PJi" firstAttribute="top" secondItem="tzQ-01-DrO" secondAttribute="bottom" constant="21" id="5Qv-K9-cS4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tzQ-01-DrO" secondAttribute="trailing" constant="72" id="HrP-z0-U0n"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NdC-Gf-PJi" secondAttribute="trailing" constant="3" id="Iox-JA-59V"/>
-                            <constraint firstItem="tzQ-01-DrO" firstAttribute="top" secondItem="6JR-Km-b1F" secondAttribute="bottom" constant="43" id="JTh-Xw-KAm"/>
-                            <constraint firstItem="PYT-rg-aUl" firstAttribute="top" secondItem="NdC-Gf-PJi" secondAttribute="bottom" constant="62" id="ODX-gk-kjO"/>
-                            <constraint firstItem="NdC-Gf-PJi" firstAttribute="leading" secondItem="NlR-dM-eLc" secondAttribute="leadingMargin" constant="3" id="aLR-Z7-Qd4"/>
-                            <constraint firstItem="tzQ-01-DrO" firstAttribute="leading" secondItem="NlR-dM-eLc" secondAttribute="leadingMargin" constant="71" id="zOd-PU-mrz"/>
+                            <constraint firstItem="NdC-Gf-PJi" firstAttribute="leading" secondItem="NlR-dM-eLc" secondAttribute="leadingMargin" constant="3" id="419-aO-PpH"/>
+                            <constraint firstItem="7KL-X2-25Q" firstAttribute="leading" secondItem="NlR-dM-eLc" secondAttribute="leadingMargin" id="8eR-Sz-k94"/>
+                            <constraint firstItem="7KL-X2-25Q" firstAttribute="trailing" secondItem="NlR-dM-eLc" secondAttribute="trailingMargin" id="BF2-Jt-Xak"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NdC-Gf-PJi" secondAttribute="trailing" constant="3" id="FpU-dF-tHN"/>
+                            <constraint firstItem="NdC-Gf-PJi" firstAttribute="top" secondItem="7KL-X2-25Q" secondAttribute="bottom" constant="8" id="WZN-Yr-2Eq"/>
+                            <constraint firstItem="PYT-rg-aUl" firstAttribute="top" secondItem="NdC-Gf-PJi" secondAttribute="bottom" constant="20" id="fwO-Aa-7o5"/>
+                            <constraint firstItem="7KL-X2-25Q" firstAttribute="top" secondItem="6JR-Km-b1F" secondAttribute="bottom" constant="8" id="rTl-wE-5lh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="dlE-jn-YG5">
@@ -91,7 +91,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="tzQ-01-DrO" id="u2B-Fd-ebw"/>
+                        <outlet property="imageSlideshow" destination="7KL-X2-25Q" id="5oC-yW-eMS"/>
                         <outlet property="textView" destination="NdC-Gf-PJi" id="dkC-Rj-JxM"/>
                         <segue destination="c66-6Y-iji" kind="show" identifier="webView" id="HrQ-vc-tCf"/>
                         <segue destination="lt1-PC-EXA" kind="show" identifier="quizView" id="ISs-ZA-vY1"/>
@@ -172,12 +172,168 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="aPX-ZD-FmK" kind="relationship" relationship="rootViewController" id="JvA-5Z-nYl"/>
+                        <segue destination="Lre-wJ-KGg" kind="relationship" relationship="rootViewController" id="Yne-F6-dDM"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udl-ck-tN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1101" y="116"/>
+            <point key="canvasLocation" x="-1655" y="116"/>
+        </scene>
+        <!--Menu Principal-->
+        <scene sceneID="LYo-vw-bwu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VMv-hI-7aF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Lre-wJ-KGg" customClass="MenuViewController" customModule="Metabol" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LXf-oN-eU9"/>
+                        <viewControllerLayoutGuide type="bottom" id="u50-F5-x1o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Ef-VK-QnZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnH-rR-UoM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="145"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conocimientos Generales" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAi-P8-xU1">
+                                        <rect key="frame" x="8" y="34" width="359" height="77"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="GAi-P8-xU1" firstAttribute="leading" secondItem="mnH-rR-UoM" secondAttribute="leading" constant="8" id="27D-cx-q0j"/>
+                                    <constraint firstAttribute="trailing" secondItem="GAi-P8-xU1" secondAttribute="trailing" constant="8" id="BGW-PT-w0S"/>
+                                    <constraint firstItem="GAi-P8-xU1" firstAttribute="top" secondItem="mnH-rR-UoM" secondAttribute="top" constant="34" id="ppt-cG-c0x"/>
+                                    <constraint firstAttribute="bottom" secondItem="GAi-P8-xU1" secondAttribute="bottom" constant="34" id="qhC-R6-ulI"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uc9-DQ-0yw" appends="YES" id="Sth-Ew-1aq"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kad-bh-e4R">
+                                <rect key="frame" x="0.0" y="210" width="375" height="123"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Carbohidratos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXN-gI-YIr">
+                                        <rect key="frame" x="8" y="42" width="359" height="39"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="nXN-gI-YIr" firstAttribute="top" secondItem="kad-bh-e4R" secondAttribute="top" constant="42" id="7Mc-ud-Tl3"/>
+                                    <constraint firstAttribute="bottom" secondItem="nXN-gI-YIr" secondAttribute="bottom" constant="42" id="Lpe-vO-6RC"/>
+                                    <constraint firstAttribute="trailing" secondItem="nXN-gI-YIr" secondAttribute="trailing" constant="8" id="NG0-78-qB5"/>
+                                    <constraint firstItem="nXN-gI-YIr" firstAttribute="leading" secondItem="kad-bh-e4R" secondAttribute="leading" constant="8" id="biq-St-Noi"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="IzM-mh-VnY" appends="YES" id="gyF-A0-O6a"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="onJ-Nb-WVw">
+                                <rect key="frame" x="0.0" y="333" width="375" height="174"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Metabolismo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ut-5J-nWD">
+                                        <rect key="frame" x="40" y="68" width="295" height="39"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="9Ut-5J-nWD" firstAttribute="leading" secondItem="onJ-Nb-WVw" secondAttribute="leading" constant="40" id="4Sc-PF-LjC"/>
+                                    <constraint firstItem="9Ut-5J-nWD" firstAttribute="top" secondItem="onJ-Nb-WVw" secondAttribute="top" constant="42" id="Bgf-Kk-Aqu"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Ut-5J-nWD" secondAttribute="trailing" constant="40" id="BqL-Qy-cnu"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Ut-5J-nWD" secondAttribute="bottom" constant="42" id="Z4f-Vy-UW1"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="odG-sg-1j8" appends="YES" id="gZ1-DM-OcH"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6VR-UO-rmg">
+                                <rect key="frame" x="0.0" y="506" width="375" height="160"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reacciones y Estructuras" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CP4-t6-FgC">
+                                        <rect key="frame" x="8" y="4" width="359" height="152"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="CP4-t6-FgC" secondAttribute="trailing" constant="8" id="4D1-wM-lZS"/>
+                                    <constraint firstItem="CP4-t6-FgC" firstAttribute="top" secondItem="6VR-UO-rmg" secondAttribute="top" constant="4" id="E70-dh-j8e"/>
+                                    <constraint firstItem="CP4-t6-FgC" firstAttribute="leading" secondItem="6VR-UO-rmg" secondAttribute="leading" constant="8" id="Qgf-qt-I9T"/>
+                                    <constraint firstAttribute="bottom" secondItem="CP4-t6-FgC" secondAttribute="bottom" constant="4" id="pvG-SW-k0Y"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6fr-Be-nuH" appends="YES" id="UIP-25-XRi"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mnH-rR-UoM" secondAttribute="trailing" id="BG9-D9-xxt"/>
+                            <constraint firstItem="onJ-Nb-WVw" firstAttribute="leading" secondItem="2Ef-VK-QnZ" secondAttribute="leading" id="Bds-BP-81x"/>
+                            <constraint firstItem="6VR-UO-rmg" firstAttribute="top" secondItem="onJ-Nb-WVw" secondAttribute="bottom" constant="-1" id="Gi8-9l-Gl6"/>
+                            <constraint firstItem="onJ-Nb-WVw" firstAttribute="top" secondItem="kad-bh-e4R" secondAttribute="bottom" constant="1" id="J9k-gk-OdR"/>
+                            <constraint firstItem="onJ-Nb-WVw" firstAttribute="top" secondItem="kad-bh-e4R" secondAttribute="bottom" constant="1" id="KWY-60-UjE"/>
+                            <constraint firstItem="u50-F5-x1o" firstAttribute="top" secondItem="6VR-UO-rmg" secondAttribute="bottom" constant="1" id="MkO-Bn-X1I"/>
+                            <constraint firstItem="6VR-UO-rmg" firstAttribute="top" secondItem="onJ-Nb-WVw" secondAttribute="bottom" constant="-1" id="SAe-xy-bN6"/>
+                            <constraint firstItem="mnH-rR-UoM" firstAttribute="top" secondItem="LXf-oN-eU9" secondAttribute="bottom" id="Uye-Dk-52t"/>
+                            <constraint firstItem="6VR-UO-rmg" firstAttribute="leading" secondItem="2Ef-VK-QnZ" secondAttribute="leading" id="bIA-oK-Kt5"/>
+                            <constraint firstItem="kad-bh-e4R" firstAttribute="top" secondItem="mnH-rR-UoM" secondAttribute="bottom" constant="1" id="ekf-uU-K7i"/>
+                            <constraint firstItem="6VR-UO-rmg" firstAttribute="top" secondItem="2Ef-VK-QnZ" secondAttribute="top" constant="506" id="gED-dF-zQI"/>
+                            <constraint firstAttribute="trailing" secondItem="kad-bh-e4R" secondAttribute="trailing" id="gay-du-BYU"/>
+                            <constraint firstItem="mnH-rR-UoM" firstAttribute="leading" secondItem="2Ef-VK-QnZ" secondAttribute="leading" id="gnX-33-8k5"/>
+                            <constraint firstAttribute="trailing" secondItem="onJ-Nb-WVw" secondAttribute="trailing" id="o5O-fz-Wyn"/>
+                            <constraint firstAttribute="trailing" secondItem="6VR-UO-rmg" secondAttribute="trailing" id="sIk-Q7-L7k"/>
+                            <constraint firstItem="kad-bh-e4R" firstAttribute="leading" secondItem="2Ef-VK-QnZ" secondAttribute="leading" id="v0l-f6-L0X"/>
+                            <constraint firstItem="kad-bh-e4R" firstAttribute="top" secondItem="2Ef-VK-QnZ" secondAttribute="top" constant="210" id="xBZ-Pl-oTQ"/>
+                            <constraint firstItem="6VR-UO-rmg" firstAttribute="top" secondItem="onJ-Nb-WVw" secondAttribute="bottom" constant="-1" id="xT3-h5-AcK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Menu Principal" id="ATK-aS-FYn"/>
+                    <connections>
+                        <outlet property="carbohidratos" destination="kad-bh-e4R" id="LYw-Qh-QYU"/>
+                        <outlet property="carbohidratosLabel" destination="nXN-gI-YIr" id="HO2-a9-w5S"/>
+                        <outlet property="generales" destination="mnH-rR-UoM" id="h6O-Mr-x9P"/>
+                        <outlet property="generalesLabel" destination="GAi-P8-xU1" id="tQh-Vl-0B7"/>
+                        <outlet property="metabolismo" destination="onJ-Nb-WVw" id="Dqs-wW-56w"/>
+                        <outlet property="metabolismoLabel" destination="9Ut-5J-nWD" id="cz7-b8-KJP"/>
+                        <outlet property="reacciones" destination="6VR-UO-rmg" id="F7i-V1-dcH"/>
+                        <outlet property="reaccionesLabel" destination="CP4-t6-FgC" id="93l-3N-UI1"/>
+                        <segue destination="aPX-ZD-FmK" kind="show" identifier="selectedCategory" id="ALc-8O-Mez"/>
+                    </connections>
+                </viewController>
+                <tapGestureRecognizer id="uc9-DQ-0yw">
+                    <connections>
+                        <action selector="conocimientosTap:" destination="Lre-wJ-KGg" id="3wQ-uh-1B1"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="IzM-mh-VnY">
+                    <connections>
+                        <action selector="carbohidratosTap:" destination="Lre-wJ-KGg" id="y2C-Rg-iOL"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="odG-sg-1j8">
+                    <connections>
+                        <action selector="metabolismoTap:" destination="Lre-wJ-KGg" id="1en-dB-jaH"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="6fr-Be-nuH">
+                    <connections>
+                        <action selector="reaccionesTap:" destination="Lre-wJ-KGg" id="4H9-32-XgI"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-914.39999999999998" y="115.59220389805098"/>
         </scene>
     </scenes>
 </document>
